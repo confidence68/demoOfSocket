@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>websocket</title>
+	<script src="socket.io.js"></script>
+</head>
+<body>
+
+<script>
+  var socket = io('ws://localhost:8008');
+  socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+</script>
+	
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>websocket</title>
+</head>
+<body>
+<div id="messageBox"></div>
+<input type="text" id="sendMessage">
+<input type="button" value="发送" id="send">
+
+<script type="text/javascript">
+	
+	var websocket = new WebSocket("ws://echo.websocket.org/");
+	websocket.onopen =function() {
+		console.log("websocket open");
+		document.getElementById("messageBox").innerHTML="Connected";
+	}
+	websocket.onclose =function(){
+		console.log("websocket close");
+	}
+	websocket.onmessage =function(e){
+		console.log("websocket open");
+		document.getElementById("messageBox").innerHTML=e.data
+	}
+	document.getElementById("send").onclick= function(){
+		var text=document.getElementById("sendMessage").value;
+		websocket.send(text);
+	}
+</script>
+	
+</body>
+</html>

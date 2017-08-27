@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>websocket</title>
+</head>
+<body>
+<input type="text" id="sendMessage">
+<input type="button" value="发送" id="send">
+
+<script type="text/javascript">
+	
+	var websocket = new WebSocket("ws://localhost:8008/");
+	function showMessage (str,type){
+		if(type=="enter"){
+			var div = '<div style="color:green">'+str +'</div>';
+		}else if(type=="leave"){
+			var div = '<div style="color:red">'+str +'</div>';
+		}else{
+			var div = '<div>'+str +'</div>';
+		}
+		document.getElementById("sendMessage").insertAdjacentHTML("beforebegin",div)
+	}
+	websocket.onopen =function() {
+		document.getElementById("send").onclick= function(){
+			var text=document.getElementById("sendMessage").value;
+			if(text){
+				websocket.send(text);
+				document.getElementById("sendMessage").value="";
+			}
+		}
+	}
+	websocket.onclose =function(){
+		console.log("websocket close");
+	}
+	websocket.onmessage =function(e){
+		console.log("websocket open");
+		var mes =JSON.parse(e.data)
+		showMessage(mes.data,mes.type)
+	}
+
+</script>
+	
+</body>
+</html>
