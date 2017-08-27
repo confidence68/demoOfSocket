@@ -1,20 +1,16 @@
 
 # Socket.IO Chat
 
-A simple chat demo for socket.io
+用Socket 构建简单聊天室
 
 ## How to use
 
 ```
-$ cd socket.io
-$ npm install
-$ cd examples/chat
 $ npm install
 $ npm start
 ```
 
-And point your browser to `http://localhost:3000`. Optionally, specify
-a port by supplying the `PORT` env variable.
+浏览器查看 `http://localhost:3000`. 
 
 ## Features
 

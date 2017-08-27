@@ -1,0 +1,14 @@
+{
+  "name": "haorooms",
+  "version": "1.0.0",
+  "description": "haorooms demo",
+  "main": "websocket.js",
+  "scripts": {
+    "start": "node websocket.js"
+  },
+  "author": "haorooms",
+  "license": "ISC",
+  "dependencies": {
+    "nodejs-websocket": "^1.7.1"
+  }
+}
