@@ -18,6 +18,8 @@
 
 案例七：[socket.io构建简单聊天室综合案例](chat/)
 
+之前写的node socket案例：[node+socket创建简单聊天室，服务器端部分引用es6写法!](https://github.com/confidence68/node-socket)
+
 
 ## How to use
 
