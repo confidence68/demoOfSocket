@@ -16,7 +16,7 @@
 案例六：[利用socket.io对上面案例进行改进](demo6/)
 
 
-案例七：[socket.io构建简单聊天室综合案例](demo7/)
+案例七：[socket.io构建简单聊天室综合案例](chat/)
 
 
 ## How to use
