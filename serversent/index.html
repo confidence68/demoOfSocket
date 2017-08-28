@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="eventsource.min.js"></script>
+</head>
+<body>
+<h1>获取服务端更新数据</h1>
+<div id="result"></div>
+
+<script>
+if(typeof(EventSource)!=="undefined")
+{
+      var es = new EventSource("server.php");
+      var listener = function (event) {
+        var div = document.createElement("div");
+        var type = event.type;
+        div.appendChild(document.createTextNode(type + ": " + (type === "message" ? event.data : es.url)));
+        document.body.appendChild(div);
+      };
+      es.addEventListener("open", listener);
+      es.addEventListener("message", listener);
+      es.addEventListener("error", listener);
+}
+else
+{
+	document.getElementById("result").innerHTML="抱歉，你的浏览器不支持 server-sent 事件...";
+}
+</script>
+
+</body>
+</html>
